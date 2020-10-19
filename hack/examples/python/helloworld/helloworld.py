@@ -15,8 +15,10 @@
 
 def handler(context, event):
     context.logger.info('This is an unstructured log')
-
-    return context.Response(body='Hello, from nuclio :]',
+    
+    mxInfer.inference()
+    
+    return context.Response(body='Hello, from mxInfer :]',
                             headers={},
                             content_type='text/plain',
                             status_code=200)
